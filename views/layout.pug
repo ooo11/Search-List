@@ -1,12 +1,55 @@
 doctype html
 html
   head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
     title= `${title}`
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/styles.css')
+
+    link(rel='stylesheet', href='/public/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/public/css/styles.css')
+    link(rel='manifest' href='/public/manifest.json')
+    
+    
+
 
   body
-    div.container.listing-reg
-      h1 My Amazing App
+  
+   
+block content
 
-      block content
+
+block scripts
+    script(src="/public/vendor/js/angular.min.js")
+    script(src="/public/vendor/js/angular-filter.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.9/angular-sanitize.min.js")
+    script(src="/public/vendor/js/ng-csv.js")
+    script(src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.5.js")
+    script(src="/public/vendor/js/angular-ui-router.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/alasql/0.4.6/alasql.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.2/jszip.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.2/xlsx.js")
+
+    //-code to select data for table
+    script.
+      var app = angular.module('myApp', ['ui.bootstrap','angular.filter',"ngSanitize", "ngCsv"]);
+        
+
+        app.factory("MyService", function($http) {
+            return {
+                fdata: function() {
+                    return $http.get("/data").then(function(response) {
+                        return response.data;
+                    });
+                }
+            }
+        });
+
+        
+
+    //- all function goes here
+    script(src="public/custom/js/app copy.js") 
+
+    
+ 
+

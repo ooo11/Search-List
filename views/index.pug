@@ -1,15 +1,102 @@
 extends layout
 
 block content
+      body
+      .title
+        h1 Home
+      div.wrapperdrop
+        div.container.dropdown
+          button.dropbtn Home
+          div.dropdown-content 
+              a(href= "/") Home
+        div.container.dropdown
+          button.dropbtn DK Series
+          div.dropdown-content 
+              a(href= "/5dk20") 5DK 20
+              a(href= "/6dk20") 6DK 20
+              a(href= "/6dk28") 6DK 28
+        div.container.dropdown
+          button.dropbtn DL Series
+          div.dropdown-content
+              a(href= "#") DL 24
+              a(href= "#") DL 26
+              a(href= "#") DL 28
+        div.container.dropdown
+          button.dropbtn DC Series
+          div.dropdown-content
+              a(href= "#") DC 17
+              a(href= "#") DC 32
+        div.container.dropdown
+          button.dropbtn DE Series
+          div.dropdown-content
+              a(href= "/de18") DE 18
+              a(href= "/de18") DE 18
+              a(href= "/de18") DE 18
+      
+      div.container-made.listing-reg(ng-app="myApp" ng-controller="myCtrlAll")
+        div.wrapper.search_box
+            input.search.input(type="text" ng-model="search" placeholder="Search for parts...") 
+        div
+          table.listing-table.table-dark.table-striped.contenedor1
+            thead
+              tr
+                  th
+                  th Drawing Number
+                  th Part Name
+                  th Part Number
+                  th Quantity
+                  th Remarks           
+        div.contenedor1(style="height: 400px;")
+          div(style="max-height:100%;overflow:auto;border:none; ")
+            table.listing-table.table-dark.table-striped
+              thead
+              tbody(ng-repeat="(key, value) in myData | fuzzy: search | groupBy: 'Group'")
+                tr
+                    th(colspan="6" id="thmain") {{ key }}
+                tr(ng-repeat="x in value | fuzzy: search") 
+                    td.bs-checkbox
+                      input(type="checkbox" ng-click="add(x)" ng-model="x.checked")
+                    td {{x.DrawingNo}}
+                    td {{x.PartName}}
+                    td {{x.PartNo}}
+                    td {{x.Quantity}}
+                    td {{x.Remarks}}
+        //-tbody(ng-repeat="(key, value) in myData | filter: search.Group | limitTo: itemsPerPage: (currentPage - 1) * itemsPerPage | groupBy: 'Group'")
+        //-pagination section
+        //- div.container
+        //-   //- div.row(data-ng-show="myData.length == 0")
+        //-   //-  div.col-span-12 No results found
+        //-   //-    div.row(data-ng-show="filteredData.length > 0")
+        //-   //- div.col-span-12
+        //-   uib-pagination(ng-model="currentPage" total-items="(myData | filter: search ).length" max-size="maxSize" items-per-page="itemsPerPage" boundary-links="true")
+  
+        br
+        h1 Selected Parts List
+        div.container-made2
+            a
+              button(class="btn2" 
+                    ng-click='downloadReports_xlsx()') Print
+            br
+            a
+              button(class="btn2" 
+                    ng-click='printToConsole()') Explain
+        div
+          
+          table.listing-table.table-dark.table-striped.contenedor
+            thead
+              tr
+                  th
+                  th Drawing Number
+                  th Part Name
+                  th Part Number
+                  th Quantity
+            tbody(ng-repeat="(key2, value2) in myData2 | groupBy: 'Group'")
+              tr
+                  th(colspan="5" id="thmain") {{ key2 }}
 
-  if registrations.length
-    table.listing-table.table-dark.table-striped
-      tr
-        th Name
-        th Email
-      each registration in registrations
-        tr
-          td= registration.name
-          td= registration.email
-  else
-    p No registrations yet :(
+              tr(ng-repeat="x2 in value2")
+                  td {{$index + 1}}
+                  td {{x2.DrawingNo}}
+                  td {{x2.PartName}}
+                  td {{x2.PartNo}}
+                  td {{x2.Quantity}}

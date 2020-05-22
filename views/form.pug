@@ -9,26 +9,78 @@ block content
         li= error.msg
 
   form(action="." method="POST" class="form-registration")
-    label(for="name") Name:
+
+    label(for="DrawingNo") Drawing Number:
     input(
-      type="text"
-      id="name"
-      name="name"
-      class="form-control"
-      value=data.name
+        type="text"
+        id="DrawingNo"
+        name="DrawingNo"
+        class="form-control"
+        value=data.DrawingNo
+      )
+
+    label(for="PartName") Part Name:
+     input(
+       type="text"
+       id="PartName"
+       name="PartName"
+       class="form-control"
+       value=data.PartName
     )
 
-    label(for="email") Email:
-    input(
-      type="email"
-      id="email"
-      name="email"
-      class="form-control"
-      value=data.email
-    )
+    label(for="PartNo") Part Number:
+      input(
+        type="text"
+        id="PartNo"
+        name="PartNo"
+        class="form-control"
+        value=data.PartNo
+      )
+
+    label(for="Quantity") Quantity:
+      input(
+        type="text"
+        id="Quantity"
+        name="Quantity"
+        class="form-control"
+        value=data.Quantity
+      )
+    
+    label(for="Group") Part Group:
+      input(
+        type="text"
+        id="Group"
+        name="Group"
+        class="form-control"
+        value=data.Group
+      )
+
+    label(for="Tags") Tags (Separate tags with commas):
+      input(
+        type="text"
+        id="Tags"
+        name="Tags"
+        class="form-control"
+        value=data.Tags
+      )
+    
+    label(for="Model") Model:
+      select(
+        type="text"
+        id="Model"
+        name="Model"
+        class="form-control"
+        value=data.Model
+      )
+        option(value="" style="display:none") Select Engine Model
+        option(value="DK-17") DK-17
+        option(value="DK-20") DK-20
+        option(value="DK-28") DK-28
+        option(value="DK-32") DK-32
+        option(value="Others") Others
 
     input(
       type="submit"
-      value="Submit"
+      value="Add to the list"
       class="btn btn-lg btn-primary btn-block"
     )
