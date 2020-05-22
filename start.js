@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path: 'process.env'});
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DATABASE, {
@@ -15,6 +15,8 @@ mongoose.connection
   });
 
 require('./models/Registration');
+require('./models/DataDE17'); 
+require('./models/DataDK20'); 
 const app = require('./app');
 
 const server = app.listen(3000, () => {

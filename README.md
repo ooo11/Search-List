@@ -1,6 +1,13 @@
-# Building a Simple Beginner App with Node, Bootstrap & MongoDB
+## Spare Search App v 1.0.0
+This is an app design to do search for spare parts. 
+List of all parts.
+Sort parts based on Engine Model.
+Recomendation based on job scope. 
 
-The code for the following [SitePoint article](https://www.sitepoint.com/build-simple-beginner-app-node-bootstrap-mongodb/).
+## Future update
+Click and add to spares form. 
+Export form to files. 
+
 
 ## Requirements
 
@@ -13,12 +20,16 @@ The code for the following [SitePoint article](https://www.sitepoint.com/build-s
 1. Clone repo
 2. Run `npm install`
 3. Create a `.env` file in the project root with database connection details
-4. Start MongoDB (using `mongod`) if running locally
+4. Start MongoDB (using `mongod`/ `brew services start mongodb-community`) if running locally 
 5. Run `npm run watch`
-6. Visit http://localhost:3000 to create a new registration
-7. Visit http://localhost:3000/registrations to view successful registrations
+6. Visit http://localhost:3000 view parts list
+7. Visit http://localhost:3000/addparts to add new parts
+8. free password
+
 
 ## License
+Codes used in this app is based on SitePoint. 
+Most code are adjusted for app proper used. 
 
 SitePoint's code archives and code examples are licensed under the MIT license.
 
