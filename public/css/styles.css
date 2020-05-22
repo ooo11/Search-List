@@ -1,11 +1,78 @@
 body {
   padding: 40px 10px;
-  background-color: #eee;
+  background-color: #e4eefa;
 }
+
+.container-made {
+  width: 100%;
+  padding-right: 15px;
+  padding-top: 280px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-made2 {
+  display: flex;
+  width: 100%;
+  margin: 0 0 1rem;
+  justify-content: center;
+  
+}
+
+.title h1 {
+  text-align: center;
+  font-size: 130px;
+  color: seagreen;
+
+  position: absolute;
+   top: 50px;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   z-index: -1;
+   overflow: hidden;
+}
+
 .listing-reg h1 {
   text-align: center;
   margin: 0 0 2rem;
+  color: seagreen;
 }
+
+/* button */
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+
+.btn2 {
+  color: rgb(28, 30, 32)  !important;
+  text-decoration: none;
+  background: rgb(175, 202, 233);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 202, 233)  !important;
+  transition: all 0.4s ease 0s; 
+}
+
+.btn2:hover{
+  color: rgb(255, 255, 255)!important;
+  background: #003f63 ;
+  border-color: #003f63 !important;
+  transition: all 0.4s ease 0s;
+}
+
 
 /* css for registration form and errors*/
 .form-registration {
@@ -42,19 +109,148 @@ body {
 }
 
 /* Styles for listing table */
+
 .listing-table {
   width: 100%;
+  border-collapse: collapse;
+  background-color: lightgrey;
+  overflow: hidden;
+  border-radius: 10px;
+  table-layout: fixed;
+
 }
 .listing-table th,
 .listing-table td {
-  padding: 10px;
-  border-bottom: 1px solid #666;
+  font-family:'Motnserrat',sans-serif;
+  text-align: left;
+  font-size: 12px;
+  color: darkslategrey;
+  text-transform: uppercase;
+  padding: 10px 8px;
+  text-align: left;
 }
+
 .listing-table th {
-  background: #000;
-  color: #fff;
+  background-color: mediumseagreen;
+  color: white;
+  padding: 10px 8px;
+  text-align: left;
+  
 }
-.listing-table td:first-child,
-.listing-table th:first-child {
-  border-right: 1px solid #666;
+
+#thmain {
+  background-color: rgb(139, 175, 165);
+  color: white;
+  font-size: 12px;
+  text-align:center;
 }
+
+.contenedor1{
+  width: 740px;
+  margin: auto;
+  height: 100%;
+
+}
+
+/* Search bar */
+.contenedor{
+  width: 740px;
+  margin: auto;
+  padding: 20px;
+  height: 100%;
+  border: 1px solid grey;
+}
+
+.wrapper {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  margin-top: 28%;
+  margin:auto;
+  transform: translate(-50%,-50%);
+}
+
+ .search_box{
+  width: 400px;
+  background: #fff;
+  border-radius: 5px;
+  height: 65px;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+
+.search {
+	width: 350px;
+  height: 100%;
+  position: relative;
+}
+.input{
+ 
+  border: 0px;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 38px;
+  color: #6f768d;
+  outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #9fa3b1;
+}
+
+
+
+/* dropdown list for top*/
+.wrapperdrop {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%,-50%);
+  outline: none;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 12px;
+  border: none;
+  outline: none;
+}
+
+.dropdown {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  align-content: center;
+  width: 100px;
+  border-right: 2px solid #dde2f1;
+  color: #9fa3b1;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  outline: none;
+}
+
+.dropdown-content a {
+  color: rgb(54, 54, 54);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  outline: none;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
